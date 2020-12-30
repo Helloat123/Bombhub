@@ -8,7 +8,7 @@ class PropertiesPanel():
 
     @staticmethod
     def build_text(content):
-        my_font = pygame.font.SysFont("simsunnsimsun", 25)
+        my_font = pygame.font.SysFont("fangsong", 25)
         return my_font.render(content, True, (0, 0, 0))
 
     @staticmethod
@@ -62,21 +62,17 @@ class PropertiesPanel():
         w, h = tips_board.get_size()
         first_y = 20
         screen.blit(PropertiesPanel.build_text(
-            '操作说明'), (x + 230, y + first_y))
+            'Instruction'), (x + 230, y + first_y))
         screen.blit(PropertiesPanel.build_text(
-            '玩家1：'), (x + 30, y + first_y + 30))
+            'Player1:'), (x + 30, y + first_y + 30))
         screen.blit(PropertiesPanel.build_text(
-            'W:上 A:左 S:下 D:右 空格:放炸弹'), (x + 30, y + first_y + 30 + 30))
-        # screen.blit(PropertiesPanel.build_text(
-        #     '空格:放炸弹'), (x + 30, y + first_y + 30 + 30 + 30))
+            'W:up A:left S:down D:right Space:bomb'), (x + 30, y + first_y + 30 + 30))
         screen.blit(PropertiesPanel.build_text(
-            '玩家2：'), (x + 30, y + first_y + 30 + 30 + 30))
+            'Player2:'), (x + 30, y + first_y + 30 + 30 + 30))
         screen.blit(PropertiesPanel.build_text(
-            '↑:上 ←:左 ↓:下 →:右 小键盘0：放炸弹'), (x + 30, y + first_y + 30 + 30 + 30 + 30))
-        # screen.blit(PropertiesPanel.build_text(
-        #     '0：放炸弹'), (x + 30, y + first_y + 30 + 30 + 30 + 30 + 30 + 30))
+            '↑:up ←:left ↓:down →:right Num0:bomb'), (x + 30, y + first_y + 30 + 30 + 30 + 30))
         screen.blit(PropertiesPanel.build_text(
-            '制作人：'), (x + 30, y + first_y + 30 + 30 + 30 + 30 + 60))
+            'Developers(Ordered by Pinin):'), (x + 30, y + first_y + 30 + 30 + 30 + 30 + 60))
         screen.blit(PropertiesPanel.build_text(
-            '柯司博 匡乾 赖若潘 劳马东'), (x + 30, y + first_y + 30 + 30 + 30 + 30 + 60 + 30))
+            '刘子琦 杨曜铭 张天麟 朱睿诚'), (x + 30, y + first_y + 30 + 30 + 30 + 30 + 60 + 30))
         return x, y, w

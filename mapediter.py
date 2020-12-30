@@ -109,6 +109,8 @@ class MapEditer(object):
         for pair in boxs:
             block = self.Paste(pair, "resources/image/box" +
                                str(random.randint(0, 3)) + ".png", BOX)
+            block.top=30# testing
+            block.left=30# testing
             self.blocks.add(block)
 
         for col in range(2, 19, 4):
@@ -117,6 +119,8 @@ class MapEditer(object):
 
         for pair in barriers:
             block = self.Paste(pair, "resources/image/barrier.png", BARRIER)
+            block.top=30# testing
+            block.left=30# testing
             self.blocks.add(block)
         self.refresh()
 
