@@ -44,15 +44,10 @@ class Button(object):
         if is_pause:
             screen.blit(pygame.image.load(
                 'resources/image/tips_board.png').convert_alpha(), (100, 100))
-        if btn_pause.enabled is True:
-            if btn_pause.render() is True:
-                is_pause = True
-                btn_continue.enabled = True
-                btn_backmenu.enabled = True
-                btn_restart.enabled = True
+
 
         if btn_continue.enabled is True:
-            if btn_continue.render() is True:
+            if btn_continue.render() is True or pygame.key.get_pressed()[pygame.K_RETURN]:
                 is_pause = False
                 btn_continue.enabled = False
                 btn_backmenu.enabled = False
@@ -75,6 +70,13 @@ class Button(object):
                 btn_continue.enabled = False
                 btn_restart.enabled = False
                 btn_backmenu.enabled = False
+
+        if btn_pause.enabled is True:
+            if btn_pause.render() is True or pygame.key.get_pressed()[pygame.K_ESCAPE]:
+                is_pause = True
+                btn_continue.enabled = True
+                btn_backmenu.enabled = True
+                btn_restart.enabled = True
 
         return is_pause, is_start, is_restart
 

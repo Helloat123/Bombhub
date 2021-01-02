@@ -58,7 +58,7 @@ while True:
         # 主界面LOGO
         logo = pygame.image.load('resources/image/logo1.png').convert()
         screen.blit(logo, (90, 30))
-        if is_restart or btn_start.render():
+        if is_restart or btn_start.render() or pygame.key.get_pressed()[K_RETURN]:
             is_start = False
             if is_restart:
                 is_restart = False
@@ -82,7 +82,7 @@ while True:
                 need_show_close = True
                 need_show_help = True
         if need_show_close:
-            if btn_close.render():
+            if btn_close.render() or pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 need_show_help = False
                 need_show_close = False
             else:
@@ -95,7 +95,7 @@ while True:
         blocks.draw(screen)
         if not is_pause:
             bombs.update(bombs)
-        bombs.draw(screen)
+        bombs.draw(screen) 
         for player in players:
             if player:
                 player.show()
