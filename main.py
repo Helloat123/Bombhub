@@ -93,22 +93,20 @@ while True:
     else:
         screen.blit(background, (0, 0))
         blocks.draw(screen)
-        if not is_pause:
-            bombs.update(bombs)
-        bombs.draw(screen) 
+        
         for player in players:
             if player:
                 player.show()
-        is_pause, is_start, is_restart = Button.btn_deal(screen=screen, is_pause=is_pause, btn_pause=btn_pause,
-                                                         btn_continue=btn_continue, btn_backmenu=btn_backmenu, btn_restart=btn_restart)
+        if not is_pause:
+            bombs.update(bombs)
+        bombs.draw(screen) 
+        is_pause,is_start,is_restart=Button.btn_deal(screen=screen,is_pause=is_pause,btn_pause=btn_pause,btn_continue=btn_continue,btn_backmenu=btn_backmenu,btn_restart=btn_restart)
         if len(players) == 1:
             is_start = True
             if players[0].id == 1:
-                screen.blit(pygame.image.load(
-                    'resources/image/player1_win.png').convert_alpha(), (100, 60))
+                screen.blit(pygame.image.load('resources/image/player1_win.png').convert_alpha(),(100,60))
             else:
-                screen.blit(pygame.image.load(
-                    'resources/image/player2_win.png').convert_alpha(), (100, 60))
+                screen.blit(pygame.image.load('resources/image/player2_win.png').convert_alpha(),(100,60))
             pygame.display.flip()
             time.sleep(2)
     pygame.display.flip()
