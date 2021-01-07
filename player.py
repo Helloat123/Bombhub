@@ -110,7 +110,7 @@ class Player(pygame.sprite.Sprite):
 		mymap.blocks.remove(tool)
 		mymap.refresh()
 		if tool.category==TOOL_SPEED_UP and self.speed<1:
-			self.speed+=0.04
+			self.speed+=0.25
 			self.shoes+=1
 		elif tool.category==TOOL_SCOPE_UP:
 			self.scope+=1

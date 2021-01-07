@@ -179,11 +179,11 @@ class Bomb(Block):
 
     def update(self, bombs):
         self.current_time += 0.01
-        if self.current_time >= 8 and self.current_time <= 8.2:
+        if self.current_time >= 3 and self.current_time <= 3.2:
             if self.has_bomb is False:
                 self.bombed()
-        elif self.current_time > 8 and self.current_time < 9:
+        elif self.current_time > 3 and self.current_time < 4:
             self.fire_list.draw(self.host.screen)
-        elif self.current_time >= 9:
+        elif self.current_time >= 4:
             bombs.remove(self)
             self.host.recover()

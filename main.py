@@ -3,8 +3,8 @@ from mapediter import *
 from bomb import *
 from properties_panel import PropertiesPanel
 from button import *
-SCREEN_WIDTH = 780
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH=780
+SCREEN_HEIGHT=600
 
 
 # 初始化 pygame
@@ -15,8 +15,8 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('SuperBomb')
 
 # 音乐
-music_pleayer = MusicPlayer(pygame.mixer)
-music_pleayer.play_music()
+#music_pleayer = MusicPlayer(pygame.mixer)
+#music_pleayer.play_music()
 
 # 暂停按钮
 btn_pause = Button('resources/image/btn_pause.png',
@@ -37,6 +37,7 @@ btn_start = Button('resources/image/play.png', (180, 460), screen, START, True)
 btn_help = Button('resources/image/help.png', (410, 460), screen, HELP, True)
 
 
+FPS=300
 is_pause = False
 is_start = True
 is_restart = False
@@ -75,7 +76,7 @@ while True:
 
 		if not is_restart:
 			if btn_help.render():
-				btn_clos=Button('resources/image/btn_close.png',(x+w,y),screen,CLOSE,True)
+				btn_close=Button('resources/image/btn_close.png',(x+w,y),screen,CLOSE,True)
 				need_show_close=True
 				need_show_help=True
 		if need_show_close:
@@ -106,4 +107,5 @@ while True:
 				screen.blit(pygame.image.load('resources/image/player2_win.png').convert_alpha(),(100,60))
 			pygame.display.flip()
 			time.sleep(2)
+	clock.tick(FPS)
 	pygame.display.flip()
