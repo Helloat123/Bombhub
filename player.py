@@ -178,7 +178,7 @@ class MusicPlayer():
 
 def handle_event(players, bombs, is_pause, is_start):
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
+		if event.type==pygame.QUIT:
 			sys.exit()
 	key_p1={K_w:'up',K_s:'down',K_a:'left',K_d:'right'}
 	key_p2={K_UP:'up',K_DOWN:'down',K_LEFT:'left',K_RIGHT:'right'}

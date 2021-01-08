@@ -50,15 +50,20 @@ clock = pygame.time.Clock()
 clock.tick(60)
 while True:
 	# 暂停后事件处理就停止，但必须到里面的pygame.key.get_pressed()之后再停止，否则会卡死
-	handle_event(players, bombs, is_pause, is_start)
+	handle_event(players,bombs,is_pause,is_start)
 	if is_start or is_restart:
-
 		background = pygame.image.load('resources/image/start_panel.png').convert()
 		screen.blit(background, (0, 0))
 		# 主界面LOGO
-		logo = pygame.image.load('resources/image/logo1.png').convert_alpha()
-		screen.blit(logo, (90, 30))
+		logo=pygame.image.load('resources/image/logo1.png').convert_alpha()
+		screen.blit(logo,(90,30))
 		if is_restart or btn_start.render() or pygame.key.get_pressed()[K_RETURN]:
+			#getready
+			getready=pygame.image.load('resources/image/getready.png').convert()
+			screen.blit(getready,(0,0))
+			pygame.display.flip()
+			time.sleep(1)
+
 			is_start = False
 			if is_restart:
 				is_restart = False

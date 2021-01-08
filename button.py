@@ -40,10 +40,9 @@ class Button(object):
         return False
 
     @staticmethod
-    def btn_deal(screen, is_pause, btn_pause, btn_continue, btn_backmenu, btn_restart):
+    def btn_deal(screen,is_pause,btn_pause,btn_continue,btn_backmenu,btn_restart):
         if is_pause:
-            screen.blit(pygame.image.load(
-                'resources/image/tips_board.png').convert_alpha(), (100, 100))
+            screen.blit(pygame.image.load('resources/image/tips_board.png').convert_alpha(), (100, 100))
 
 
         if btn_continue.enabled is True:
@@ -54,6 +53,8 @@ class Button(object):
                 btn_restart.enabled = False
 
         is_start = False
+        is_restart = False
+        
         if btn_backmenu.enabled is True:
             if btn_backmenu.render() is True:
                 is_start = True
@@ -61,7 +62,7 @@ class Button(object):
                 btn_continue.enabled = False
                 btn_restart.enabled = False
                 btn_backmenu.enabled = False
-        is_restart = False
+        
         if btn_restart.enabled is True:
             if btn_restart.render() is True:
                 is_restart = True
@@ -82,7 +83,6 @@ class Button(object):
 
     def render(self):
         """show which pic"""
-        self.screen.blit(self.upimage, self.pos)
-        if self.isClick():
-            return True
+        self.screen.blit(self.upimage,self.pos)
+        if self.isClick():return True
         return False
