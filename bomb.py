@@ -51,9 +51,10 @@ class Bomb(Block):
         if obj._has_tool:
             mymap = MapEditer.instance()
             pos = MapEditer.to_real_coordinate(obj.pos)
-            num = random.randint(0, 3)
-            tmp = MapEditer.Paste(
-                pos, "resources/image/tool" + str(num) + ".png", TOOL[num])
+            num = random.randint(0,3)
+            if num==0:
+                if random.random()>0.9: num=random.randint(1,3)
+            tmp = MapEditer.Paste(pos,"resources/image/tool"+str(num)+".png",TOOL[num])
             mymap.blocks.add(tmp)
             mymap.refresh()
 

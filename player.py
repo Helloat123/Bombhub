@@ -19,7 +19,7 @@ class Player(pygame.sprite.Sprite):
 		self.screen=screen
 		self.blocks=blocks
 		self.image={}
-		self.speed=0.6
+		self.speed=0.45
 		self.shoes=0
 		self.scope=1
 		self.bombs=1
@@ -91,26 +91,28 @@ class Player(pygame.sprite.Sprite):
 		flag = False
 		if collisions:
 			for collision in collisions:
-				if self.check_position(direction, collision):
+				if self.check_position(direction,collision):
 					flag = True
 					break
 		if collisions and flag:
 			if collision.category in TOOL:
 				self.eat_tool(collision)
 			else:
+				print(collision.category)
 				if direction=='up': self.top+=self.speed
 				elif direction=='down': self.top-=self.speed
 				elif direction=='left': self.left+=self.speed
 				elif direction=='right': self.left-=self.speed
 		self.rect.top=int(self.top)
 		self.rect.left=int(self.left)
+		print(self.rect.top,self.rect.left)
 
 	def eat_tool(self, tool):
 		mymap = MapEditer.instance()
 		mymap.blocks.remove(tool)
 		mymap.refresh()
 		if tool.category==TOOL_SPEED_UP and self.speed<1:
-			self.speed+=0.15
+			self.speed+=0.08
 			self.shoes+=1
 		elif tool.category==TOOL_SCOPE_UP:
 			self.scope+=1
