@@ -15,8 +15,8 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('BombHub')
 
 # 音乐
-#music_pleayer = MusicPlayer(pygame.mixer)
-#music_pleayer.play_music()
+music_pleayer = MusicPlayer(pygame.mixer)
+music_pleayer.play_music()
 
 # 暂停按钮
 btn_pause = Button('resources/image/btn_pause.png',

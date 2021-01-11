@@ -102,7 +102,7 @@ class MapEditer(object):
 		col, row = MapEditer.to_map_coordinate(pair)
 		block_img = pygame.image.load(img)
 		if category == BOX:
-			block = Box(block_img, (col, row), img.endswith("box0.png") or img.endswith("box3.png") and random.random() > 0.4)
+			block = Box(block_img, (col, row), img.endswith("box0.png") or img.endswith("box3.png") and random.random() > 0.65)
 		else:
 			block = Block(block_img, (col, row), category)
 		return block

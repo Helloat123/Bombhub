@@ -98,14 +98,12 @@ class Player(pygame.sprite.Sprite):
 			if collision.category in TOOL:
 				self.eat_tool(collision)
 			else:
-				print(collision.category)
 				if direction=='up': self.top+=self.speed
 				elif direction=='down': self.top-=self.speed
 				elif direction=='left': self.left+=self.speed
 				elif direction=='right': self.left-=self.speed
 		self.rect.top=int(self.top)
 		self.rect.left=int(self.left)
-		print(self.rect.top,self.rect.left)
 
 	def eat_tool(self, tool):
 		mymap = MapEditer.instance()
