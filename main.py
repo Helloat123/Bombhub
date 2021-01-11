@@ -12,7 +12,7 @@ pygame.init()
 # 游戏界面像素大小
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 # 游戏界面标题
-pygame.display.set_caption('SuperBomb')
+pygame.display.set_caption('BombHub')
 
 # 音乐
 #music_pleayer = MusicPlayer(pygame.mixer)
