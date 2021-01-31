@@ -1,4 +1,4 @@
-原作：https://github.com/lr555/SuperBomb（github上找到三个一样的，其中这个commit的时间最早）
+原作：https://github.com/lr555/SuperBomb （github上找到三个一样的，其中这个commit的时间最早）
 
 由于是作业，之前抄了答案并未粘贴原始链接，实在抱歉！我们对原作进行了许多改动，可以说除了核心部分以外基本都是新的。
 
